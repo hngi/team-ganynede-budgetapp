@@ -65,5 +65,46 @@ body {
     text-align: center;
     letter-spacing: 0.05em;
     color: #5F5F5F;
+}
 
+/**LOGIN STYLE***/
+#login {
+    background: #F0F0F0;
+}
+#login-btn {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.15em;
+    color: #FFFFFF; 
+    background-color: #FF7800;
+    margin-top: 30px;
+}
+.form-check {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #5F5F5F;
+}
+
+.word3 h6 {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #5F5F5F;
+}
+
+#form {
+    margin-top: 50px;
+}
+.close-btn button{
+    color: #FFFFFF;
 }
