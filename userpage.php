@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['name'])){
+   header("Location: index.html"); 
+}        
+echo $_SESSION['name'];
+ ?>
 <!-- Angela worked on this page, please leave the style tag here to avoid conflicts -->
 <!-- If you need to make corrections, please use the style tag here. Thank you -->
 
@@ -80,7 +86,7 @@
                 <a href="" class="toplinks"><li>Support</li></a>
             </ul>
             <div>
-                <a href="" >LOG OUT</a>
+                <a href="logout.php" >LOG OUT</a>
             </div>
         </div>
         <i class="fa fa-bars"></i>
@@ -113,6 +119,7 @@
             </div>
         <div class="col-8">
             <div>
+                <h2><?php echo "Welcome, " .$_SESSION['name'] ?></h2>
                 <h4>We need information on your Income and Expenditure to help you plan better. Please fill in the following information:</h4> 
                 </div>
             <br>
