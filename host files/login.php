@@ -1,47 +1,57 @@
+
 <?php 
-session_start();
 
-require 'connect.php';
-$errorMsg = "";
+  require_once "config.php";
 
-if (isset($_POST["submit"])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    //$username = '';
-    
-    
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $query_result = mysqli_query($conn, $query);
-    $user;
-    if(mysqli_num_rows($query_result) > 0){
-        $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
-       
-    }
+  if (isset($_SESSION['access_token'])){
+      header('Location: userpage.php');
+      exit();
+  }
+
+  $loginURL = $gClient->createAuthUrl();
 
 
-    if($user) {
+    require 'connect.php';
+    $errorMsg = "";
+
+    if (isset($_POST["submit"])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        //$username = '';
         
-        foreach($user as $cred => $values) {
-            if($password == $values['password_hash']){
-               
-              $_SESSION['name'] = $values['username']; 
-              $_SESSION['email'] = $email;
-              header("Location: userpage.php?login=successs");
-            } else {
-                $errorMsg = "Wrong password.";
-            }
-      }
         
+        $query = "SELECT * FROM users WHERE email = '$email'";
+        $query_result = mysqli_query($conn, $query);
+        $user;
+        if(mysqli_num_rows($query_result) > 0){
+            $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
+          
+        }
 
-    } else {
-            $errorMsg = "This account doesn't exist. <br> Click 'Get Started' to create an account.";
+
+        if($user) {
+            
+            foreach($user as $cred => $values) {
+                if($password == $values['password_hash']){
+                  
+                  $_SESSION['name'] = $values['username']; 
+                  $_SESSION['email'] = $email;
+                  header("Location: userpage.php?login=successs");
+                } else {
+                    $errorMsg = "Wrong password.";
+                }
+          }
+            
+
+        } else {
+                $errorMsg = "This account doesn't exist. <br> Click 'Get Started' to create an account.";
+            
+        }
+
+
         
-    }
-
-
-    
-    
-}
+        
+    } 
 
         
 ?>
@@ -105,10 +115,21 @@ if (isset($_POST["submit"])) {
                     <div class="signup-content">
                         
                         <form class="formSize" method="POST" action="login.php" name="LoginForm">
-                            <h4><?php echo $errorMsg; ?></h4>
+                          <h4><?php echo $errorMsg; ?></h4>
                                 <div class="formHeader col-12">Welcome </div>
+                                
+                            <div class = "form-row ">
+                                <div class="form-group col-12">
+                                  <button onclick="window.location = '<?php echo $loginURL ?>' " class="btn btn-danger btn-lg btn-block google">
+                                    <i class="fa fa-google fa-fw"></i> Login with Google
+                                  </button>
+                                </div> 
+                            
+                            </div>
+                            <br>
                            
                             <div class="form-row">
+
                               <div class="form-group col-12">
                                 <label for="inputEmail">Email</label>
                                 <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Enter Email" required>
