@@ -50,6 +50,8 @@ if(isset($_GET['id'])){
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <meta name="theme-color" content="#333" />
+  <link rel="manifest" href="/manifest.json" />
  <!-- bootstrap css -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <!-- main css -->
@@ -177,6 +179,7 @@ if(isset($_GET['id'])){
  <script src="js/bootstrap.bundle.min.js"></script>
  <!-- script js -->
  <!--<script src="js/calculator.js"></script>-->
+ <script src="app.js"></script>
 </body>
 
 </html>

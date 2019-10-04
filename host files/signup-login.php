@@ -147,6 +147,8 @@ if(isset($_POST["login"])) {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="theme-color" content="#333" />
+		<link rel="manifest" href="/manifest.json" />
 		<title>SpendLess - Home</title>
 		<link rel="stylesheet" href="css/index.css" />
 		<link
@@ -394,6 +396,7 @@ if(isset($_POST["login"])) {
 		</footer>
 
 		<!-- Scripts should come below here -->
+		<script src="app.js"></script>
 		<script src="./js/signup-login.js"></script>
 		<script src="./js/menu-action.js"></script>
 		<script
