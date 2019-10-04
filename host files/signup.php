@@ -76,20 +76,17 @@ header("Location: userpage.php");
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link py-md-3 px-4" href="#">Why SpendLess?</a>
+              <li class="nav-item">
+                  <a class="nav-link py-md-3 px-4" href="index.html#about-us">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link py-md-3 px-4" href="#">Solutions</a>
+                  <a class="nav-link py-md-3 px-4" href="content.html#why-spendless">Why SpendLess?</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link py-md-3 px-4" href="#">Resources</a>
+                  <a class="nav-link py-md-3 px-4" href="content.html#how-it-works">How it Works</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link py-md-3 px-4" href="#">How it Works</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link py-md-3 px-4" href="#">Support</a>
+                  <a class="nav-link py-md-3 px-4" href="content.html#support">Support</a>
                 </li>
                 <a href="login.php" class="nav-item py-md-3 px-4 btn btn-outline-warning">LOG IN</a>
 
