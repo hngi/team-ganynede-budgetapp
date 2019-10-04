@@ -219,11 +219,10 @@ if(isset($_POST["login"])) {
 			</figure>
 			<div class="big-nav hidden">
 				<ul>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
+				<a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+				<a href="content.html#why-spendless" class="toplinks">Why SpendLess?</a>
+				<a href="content.html#how-it-works" class="toplinks">How it Works</a>
+				<a href="content.html#support" class="toplinks">Support</a>
 				</ul>
 				<div>
 					<a
@@ -237,11 +236,10 @@ if(isset($_POST["login"])) {
 			</div>
 			<i class="fa fa-bars"></i>
 			<div class="small-nav hidden">
-				<a href="" class="toplinks">Why SpendLess?</a>
-				<a href="" class="toplinks">Solutions</a>
-				<a href="" class="toplinks">Resources</a>
-				<a href="" class="toplinks">How it Works</a>
-				<a href="" class="toplinks">Support</a>
+			<a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+				<a href="content.html#why-spendless" class="toplinks">Why SpendLess?</a>
+				<a href="content.html#how-it-works" class="toplinks">How it Works</a>
+				<a href="content.html#support" class="toplinks">Support</a>
 			</div>
 		</nav>
 

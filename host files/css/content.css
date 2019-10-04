@@ -1,0 +1,165 @@
+ body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color:   #fafafa; !important;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div.home-page .btn {
+    float: right;
+    margin-top: -3rem;
+    color: #f16821;
+    border: 1px solid #f16821;
+    outline: none;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #fafafa;;
+    border-top: 1rem solid #B7AC44;
+}
+
+div.home-page .btn:hover {
+    background-color: #f16821;
+        color: #ffffff;
+}
+
+div#why-spendless, div#spendless-img-container {
+   margin-top: 1rem; 
+}
+
+section.main-container h3 {
+    color: #a8943d;
+    Font-size: 30px;
+    letter-spacing: 0.1rem; 
+    line-height: 3rem;
+}
+
+section.main-container .spendless__text h3 {
+    color:   #343434; 
+    text-transform: uppercase;
+}
+
+.spendless__text span {
+    border-bottom: 2px solid  #a8943d;
+   
+}
+
+section.main-container p {
+    color:  #343434;
+    font-size: 22px;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+
+.spendless-img {
+    width: 90%;
+    margin-left: -1rem;
+}
+
+#support li {
+    padding: 1rem 0 0 1.2rem;
+    font-size: 22px;
+    color: #343434;
+    line-height: 38px;
+    letter-spacing: 1px;
+    width: 90%;
+}
+
+#support ul li {
+    font-style: italic;
+    font-size: 20px;
+}
+
+#support ul li:hover {
+  color: #a8943d;
+}
+
+div.spendless__text {
+  width: 100%;
+  margin: auto;
+}
+
+div.spendless__text p {
+    width: 90%;
+}
+
+ div#how-it-works-img-container, div#how-it-works {
+  margin-top: 4%;
+}
+
+div.how-it-works__text {
+    width: 100%;
+    margin: auto;
+    padding-left: 5%;
+}
+
+
+div.how-it-works__text p {
+    width: 80%;
+}
+
+.how-it-works-img {
+    width: 80%;
+}
+
+div#support, div#support-img-container {
+    margin-top: 4%;
+    padding-left: 5%;
+}
+
+.support-img{
+    margin-left: -23%;
+}
+
+
+section.main-container h4,  section.main-container h5 {
+    font-size: 22px;
+    padding-left: 8px;
+    letter-spacing: 0.1rem; 
+    line-height: 3rem;
+}
+
+section.main-container hr {
+    width: 90%;
+    background-color: #a8943d;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .how-it-works-img {
+      width: 90%;
+      margin-left: 22%;
+    }
+    .support-img {
+        margin-left: 1%;
+    }
+   
+}
+
+@media only screen and (max-width: 600px)  {
+    .how-it-works-img {
+        width: 80%;
+        margin-left: 3%;
+      }
+
+    div.spendless__text {
+        margin-left: 4%;
+    }
+}
+
+
+   
+   
+
+
+
+

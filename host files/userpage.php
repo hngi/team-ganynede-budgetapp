@@ -232,11 +232,10 @@ if(isset($_POST['submit'])){
         </figure>
         <div class="big-nav hidden">
             <ul>
-                <a href="#" class="toplinks"><li>Why BudgetIt?</li></a>
-                <a href="#" class="toplinks"><li>Solutions</li></a>
-                <a href="#" class="toplinks"><li>Resources</li></a>
-                <a href="#" class="toplinks"><li>How it works</li></a>
-                <a href="#" class="toplinks"><li>Support</li></a>
+            <a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+                <a href="content.html#why-spendless" class="toplinks"><li>Why SpendLess?</li></a>
+                <a href="content.html#how-it-works" class="toplinks"><li>How it works</li></a>
+                <a href="content.html#support" class="toplinks"><li>Support</li></a>
             </ul>
             <div>
                 <a href="logout.php" >LOG OUT</a>
@@ -244,11 +243,10 @@ if(isset($_POST['submit'])){
         </div>
         <i class="fa fa-bars"></i>
         <div class="small-nav hidden">
-            <a href="#" class="toplinks">Why Budget It?</a>
-            <a href="#" class="toplinks">Solutions</a>
-            <a href="#" class="toplinks">Resources</a>
-            <a href="#" class="toplinks">How it Works</a>
-            <a href="#" class="toplinks">Support</a>
+        <a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+                <a href="content.html#why-spendless" class="toplinks"><li>Why SpendLess?</li></a>
+                <a href="content.html#how-it-works" class="toplinks"><li>How it works</li></a>
+                <a href="content.html#support" class="toplinks"><li>Support</li></a>
             <a href="logout.php">LOG OUT</a>
         </div>
     </nav>
@@ -267,6 +265,7 @@ if(isset($_POST['submit'])){
                         <li><i class='fa fa-line-chart'></i>&nbsp;&nbsp;&nbsp;<a href="budgt_chart.php" class ="side-bar-links fourth">Budget Chart</a></li>
                         <li><i class='fa fa-gear'></i>&nbsp;&nbsp;&nbsp;<a href="" class ="side-bar-links fifth">Settings</a></li>
                         <li><i class='fa fa-users'></i>&nbsp;&nbsp;&nbsp;<a href="" class ="side-bar-links seventh">Refer</a></li>
+                        <li><i class='fa fa-comments'></i>&nbsp;&nbsp;&nbsp;<a href="feedback.php" class ="side-bar-links eighth floop">Feedback</a></li>
                         <li><i class='fa fa-sign-out'></i>&nbsp;&nbsp;&nbsp;<a href="logout.php" class ="side-bar-links out">Logout</a></li>
                     </ul>
                 </div>
@@ -536,6 +535,32 @@ const tour = new Shepherd.Tour({
         id: 'creating'
         });
 
+        tour.addStep({
+       title: 'Feedback Link',
+       text: `Click this link, to give/get a feedback on any issues you are having regarding the site.`,
+       attachTo: {
+           element: '.floop',
+           on: 'bottom'
+       },
+       buttons: [
+           {
+           action() {
+               return this.back();
+           },
+           classes: 'shepherd-button-secondary',
+           text: 'Back'
+           },
+           {
+           action() {
+               return this.next();
+           },
+           classes: 'shepherd-button-primary',
+           text: 'Next'
+           }
+       ],
+       id: 'creating'
+       });
+        
         tour.addStep({
         title: 'Log out link',
         text: `Click this link when you are through navigating this site. Thank you.`,
