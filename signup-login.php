@@ -147,6 +147,7 @@ if(isset($_POST["login"])) {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="theme-color" content="#333" />
 		<title>SpendLess - Home</title>
 		<link rel="stylesheet" href="css/index.css" />
 		<link
@@ -169,6 +170,7 @@ if(isset($_POST["login"])) {
 		<!-- css file for sign up button pulse animation-->
 		<link rel="stylesheet" type="text/css" href="css/animate.css" />
 		<link rel="stylesheet" href="./css/signuplogin.css" />
+		<link rel="manifest" href="/manifest.json" />
 		<style>
 			.card-box{
 			    padding: 15px;
