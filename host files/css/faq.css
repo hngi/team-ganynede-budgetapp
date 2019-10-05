@@ -12,6 +12,21 @@ html{
 	box-sizing: border-box;
 }
 
+div.home-page .btn {
+    float: right;
+    margin-top: -3rem;
+    color: #FF7860;
+    border: 1px solid #FF7860;
+    outline: none;
+    font-size: 18px;
+}
+
+
+div.home-page .btn:hover {
+    background-color: #f16821;
+        color: #ffffff;
+}
+
 section {
 	width: 100%;
 	height: 100vh;
@@ -97,5 +112,13 @@ section {
 .accordion-item:target .accordion-link .ion-md-remove{
 	display: block;
 }
-
-
+footer {
+    height: 50px;
+    background-color: #41424E;
+    text-align: center;
+    padding-top: 20px;
+    position: fixed;
+    color: white;
+    bottom: 0;
+    width: 100%;
+}
