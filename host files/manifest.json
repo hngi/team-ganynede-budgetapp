@@ -1,0 +1,26 @@
+
+{
+    "name": "Ganymede Budget App",
+    "short_name": "Ganymede",
+    "icons": [
+      {
+        "src": "images/pwa-money.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "images/logo1.jpg",
+        "sizes": "225x225",
+        "type": "image/png"
+      },
+      {
+        "src": "images/pwa-icon1.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ddd",
+    "theme_color": "#333"
+  }

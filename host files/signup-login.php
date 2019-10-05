@@ -139,7 +139,7 @@ if(isset($_POST["login"])) {
 
 
 
- ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -148,6 +148,7 @@ if(isset($_POST["login"])) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="theme-color" content="#333" />
+		<link rel="manifest" href="/manifest.json" />
 		<title>SpendLess - Home</title>
 		<link rel="stylesheet" href="css/index.css" />
 		<link
@@ -170,7 +171,6 @@ if(isset($_POST["login"])) {
 		<!-- css file for sign up button pulse animation-->
 		<link rel="stylesheet" type="text/css" href="css/animate.css" />
 		<link rel="stylesheet" href="./css/signuplogin.css" />
-		<link rel="manifest" href="/manifest.json" />
 		<style>
 			.card-box{
 			    padding: 15px;
@@ -211,7 +211,7 @@ if(isset($_POST["login"])) {
 	<body>
 		<nav class="flex">
 			<figure>
-				<a href=""><img
+				<a href="index.html"><img
 					src="https://res.cloudinary.com/angelae/image/upload/v1569493481/Start-ng-Pre-internship/n2mmwn3pvnbjuaqjjkj3.png"
 					alt="Logo"
 					style="width: 63px; height: 63px; padding: 10px;"
@@ -219,11 +219,10 @@ if(isset($_POST["login"])) {
 			</figure>
 			<div class="big-nav hidden">
 				<ul>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
-					<a href="" class="toplinks"><li></li></a>
+				<a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+				<a href="content.html#why-spendless" class="toplinks">Why SpendLess?</a>
+				<a href="content.html#how-it-works" class="toplinks">How it Works</a>
+				<a href="content.html#support" class="toplinks">Support</a>
 				</ul>
 				<div>
 					<a
@@ -237,11 +236,10 @@ if(isset($_POST["login"])) {
 			</div>
 			<i class="fa fa-bars"></i>
 			<div class="small-nav hidden">
-				<a href="" class="toplinks">Why SpendLess?</a>
-				<a href="" class="toplinks">Solutions</a>
-				<a href="" class="toplinks">Resources</a>
-				<a href="" class="toplinks">How it Works</a>
-				<a href="" class="toplinks">Support</a>
+			<a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+				<a href="content.html#why-spendless" class="toplinks">Why SpendLess?</a>
+				<a href="content.html#how-it-works" class="toplinks">How it Works</a>
+				<a href="content.html#support" class="toplinks">Support</a>
 			</div>
 		</nav>
 
@@ -396,6 +394,7 @@ if(isset($_POST["login"])) {
 		</footer>
 
 		<!-- Scripts should come below here -->
+		<script src="app.js"></script>
 		<script src="./js/signup-login.js"></script>
 		<script src="./js/menu-action.js"></script>
 		<script
