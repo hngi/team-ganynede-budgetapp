@@ -65,9 +65,9 @@ section.banner::after {
     animation-timing-function: ease-out;
 }
 .overlay-text p{
-   font-weight: 700;
+   font-weight: 900;
    font-size: 20px;
-   line-height: 35px;
+   line-height: 40px;
    letter-spacing: 0.07em;
    animation: moveInRight 1s ease-out;
 }
@@ -103,22 +103,15 @@ section.banner::after {
     }
 }
 
-/*@media only screen and (max-width: 718px) {*/
-/*    .overlay-text{ */
-/*        width: 90%;*/
-/*        top: 5%;*/
-/*    }   */
-/*}*/
+@media only screen and (max-width: 718px) {
+    .overlay-text{ 
+        width: 90%;
+        top: 5%;
+    }   
+}
 @media only screen and (max-width: 566px) {
     .overlay-text {
-        width:50%;
-        font-size: 18px;
-        line-height: 20px;
-    }    
-    .overlay-text p {
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 20px;
+        width:90%
     }    
 }
 @media only screen and (max-width: 428px) {
@@ -128,7 +121,7 @@ section.banner::after {
 }
 @media only screen and (max-width: 343px) {
     .overlay-text p {
-        line-height: 18px;
+        line-height: 30px;
     }
 }
 
@@ -225,12 +218,12 @@ input[name='register'] {
 div.modal-header {
     background: #434450;
 }
-/*div.row {*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-around;*/
-/*    padding: 5px;*/
-/*    min-height: 40vh;*/
-/*}*/
+div.row {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+    min-height: 40vh;
+}
 div.shadow {
     width: 280px;
     margin: 5px;
@@ -274,11 +267,11 @@ footer a {
         }
 .index-sign-up:hover{
     background-color: #CE6713;
-}
+
 div.container-fluid {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-
+r
 }
