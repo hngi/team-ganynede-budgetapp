@@ -1,47 +1,52 @@
 <?php 
-session_start();
-
 require 'connect.php';
 $errorMsg = "";
 
-if (isset($_POST["submit"])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    //$username = '';
+if (isset($_POST["submit"]) && $_POST['email'] && !empty($_POST['email']) && $_POST['password'] && !empty($_POST['password'])) {
     
+    //store input in variables.
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    // echo $email;
+    // echo $password;
+    // //$username = '';
     
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $query_result = mysqli_query($conn, $query);
-    $user;
-    if(mysqli_num_rows($query_result) > 0){
-        $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
+    $query = "SELECT * FROM users WHERE email= '$email' AND user_password = '$password'";
+    $result = mysqli_query($conn, $query)
+    or die(mysqli_error($conn));
+    if ($result && mysqli_num_rows($result) > 0) {
+         $user_row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+          foreach ($user_row as $det) {
+               if ($det['active'] == 'no') {
+            $errorMsg = "Please activate your account";
+          } else {
+        
+        session_start();
+         $_SESSION['name'] = $det['username'];
+        $_SESSION['email'] = $det['email'];
+        
+        header("Location: userpage.php");
+            
+        
+        
+        
+        
+        
+                  
+              }
+          }
+         
+    } else {
+        $errorMsg = "Email or Password is incorrect";
+        
+    } 
        
     }
-
-
-    if($user) {
-        
-        foreach($user as $cred => $values) {
-            if($password == $values['password_hash']){
-               
-              $_SESSION['name'] = $values['username']; 
-              $_SESSION['email'] = $email;
-              header("Location: userpage.php?login=successs");
-            } else {
-                $errorMsg = "Wrong password.";
-            }
-      }
-        
-
-    } else {
-            $errorMsg = "This account doesn't exist. <br> Click 'Get Started' to create an account.";
-        
-    }
-
-
+    
+   
     
     
-}
+
 
         
 ?>
