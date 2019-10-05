@@ -219,7 +219,7 @@ if(isset($_POST["login"])) {
 			</figure>
 			<div class="big-nav hidden">
 				<ul>
-				<a href="index.html#about-us" class="toplinks"><li>About Us</li></a>
+				<a href="content.html#about-us" class="toplinks"><li>About Us</li></a>
 				<a href="content.html#why-spendless" class="toplinks">Why SpendLess?</a>
 				<a href="content.html#how-it-works" class="toplinks">How it Works</a>
 				<a href="content.html#support" class="toplinks">Support</a>

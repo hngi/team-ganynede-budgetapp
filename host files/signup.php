@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link py-md-3 px-4" href="index.html#about-us">About Us</a>
+                  <a class="nav-link py-md-3 px-4" href="content.html#about-us">About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link py-md-3 px-4" href="content.html#why-spendless">Why SpendLess?</a>
