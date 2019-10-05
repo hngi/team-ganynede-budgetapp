@@ -1,49 +1,47 @@
 <?php 
-session_start();
-
-ob_start();
-require 'connect.php';
-
+include 'connect.php';
+//create variable for error
 $error = '';
+
 if (isset($_POST['submit'])) {
-
-    //echo " received";
-
-$name = $username = $email = $password = '';
-
-
-if($_POST['password'] == $_POST['confirmPassword']) {
-    //store details in a variable
+    if ($_POST['password'] == $_POST['confirmPassword']) {
     $name = mysqli_real_escape_string($conn, $_POST["fname"]);
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
-}
-   
-//check if account exist
 
-$query = "SELECT * FROM users WHERE email = '$email'";
-$query_result = mysqli_query($conn, $query);
-
-if(mysqli_num_rows($query_result) > 0){
-   $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC); 
-}
-
-//$user = mysqli_fetch_assoc($query_result);
-//print_r($user);
-
-if(!$user) {    
-     	
-$sql = "INSERT INTO users(username, password_hash, email) VALUES('$username','$password', '$email')";
-$add_user = mysqli_query($conn, $sql); 
-$_SESSION['name'] = $username;
-$_SESSION['email'] = $email;
-
-header("Location: userpage.php");
-} else {
-    $error = 'This account exists. Please log in';
-}
-
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $query)
+    or die("Error connecting db");
+    if ($result && mysqli_num_rows($result) > 0) {
+        $error = "Can't recreate an existing account. Log in";
+    } else {
+        $hash_code = md5(rand(1, 1000));
+        $active = 'no';
+        $query = "INSERT INTO users(username, user_password, email, hash_code, active) VALUES('$username','$password', '$email', '$hash_code', '$active' )";
+        $result = mysqli_query($conn, $query)
+        or die('Error entering user');
+        
+        //send verification email
+        $from = "noreply@spendless-hng.com";
+        $to = $email;
+        $subject = 'Sign Up Verification';
+        $message = "Thanks for signing up with SpendLess \n \n
+        Please click on the link to verify your account: \n
+        https://spendless-hng.000webhostapp.com/verification.php?email=$email&hash=$hash_code";
+        //send mail
+        $sent = mail($to, $subject, $message, "From: $from");
+        if($sent) {
+            header("Location: goverify.html"); 
+        } else {
+            $error = "Couldn't send verification link to your email";
+        }
+       
+        
+    }
+    
+    }
+    
 }
 
 ?>
