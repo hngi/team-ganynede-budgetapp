@@ -19,6 +19,9 @@
 		<link rel="stylesheet" href="css/danstyles.css" />
 		<!-- css file for sign up button pulse animation-->
 		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+
+		<!-- css file for subscribe button-->
+		<link rel="stylesheet" href="./css/subscribe.css">
 		<style>
 			.card-box{
 			    padding: 15px;
@@ -100,6 +103,30 @@
 				</p>
 			</div>
 		</section>
+
+		<!-- Newsletter goes here-->
+						
+<button id="modalBtn">Subscribe To Our Newsletter</button>
+
+<div id="newsletterModal" class="modal">
+	<div class="modal-content">
+		<div class="modal-header">
+		<span class="closeBtn">&times;</span>
+		<div class="offers"></div>
+			<h2>Be the first to get special offers...</h2>
+			</div>
+			<p>Sign up to our newsletter and get access to free tips on financial management and special offers.</p>
+			<div class="subscribe">
+					<form>
+						<input type="email" placeholder="Enter your email here...">
+						<button type="submit" class="button1">Subscribe</button>
+					</form>
+				</div>
+		</div>
+		</div>
+	</div>
+
+
 		<section>
 			<div class="container-fluid" style="width: 100%; height: 100%; background-color: #f5f6f9; padding: 5% 10% 5% 10% ;">
 				<div class="container-fluid">
@@ -165,6 +192,7 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="decision-sectioncontainer-fluid">
 			<div
 				class="col-sm-12"
@@ -188,8 +216,7 @@
 								>SIGN UP</a
 							>
 						</button>
-						&nbsp;&nbsp;&nbsp;&nbsp; <br /><br />
-					</div><br><br>
+			</div>
 				</div>
 			</div>
 		</section>
@@ -218,6 +245,7 @@
 		<footer style="padding-top: 1.5%;">
 			Team Ganymede - HNGi6 &copy; 2019.
 			<a href="#"><i class="fa fa-angle-double-up"></i></a>
+
 		</footer>
 
 		<!-- Scripts should come below here -->
@@ -243,5 +271,7 @@
 			});
             
 		</script>
+
+<script src="subscribe.js"></script>
 	</body>
 </html>
