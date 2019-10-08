@@ -65,5 +65,68 @@ body {
     text-align: center;
     letter-spacing: 0.05em;
     color: #5F5F5F;
+}
 
+/***
+STYLING THE BLOG PAGE
+*****/
+.header h2 {
+    margin-top: 30px;
+    font-family: Nunito;
+    font-style: bold;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #FF7800;
+    text-transform: capitalize;
+    text-align: center;
+
+}
+
+.header p {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    color: #FF7800;
+    text-transform: none;
+    text-justify: auto;
+    text-align: center;
+}
+
+.card {
+    width: 95%;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #FF7800;
+}
+.card a {
+    text-decoration: none;
+    background-color: #FF7800;
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 1em 1.5em;
+    text-align: right;
+    font-weight: bold;
+}
+.card a:hover{
+    text-decoration: none;
+    background-color: #FFFFFF;
+    color: #FF7800;
+    border-radius: 50px;
+    border: 2px solid #FF7800;
+    padding: 1em 1.5em;
+    text-align: right;
+    font-weight: bold;
 }
