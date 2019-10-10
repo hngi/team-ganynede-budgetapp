@@ -62,7 +62,7 @@ if(isset($_POST['register'])) {
         $errors['password'] = "Password must contain at least 6 characters  <br/>";
     }
 
-if(!array_filter($errors) ) {
+if(!array_filter($errors) && $conn) {
 
   $name = mysqli_real_escape_string($conn, $_POST["name"]);
   $username = mysqli_real_escape_string($conn, $_POST["username"]);
@@ -94,6 +94,10 @@ $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
             }
 
 
+    } else {
+        if (! $conn) {
+            echo 'Unable to connect to Database';
+        }
     }
 }
 
