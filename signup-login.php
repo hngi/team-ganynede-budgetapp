@@ -6,37 +6,24 @@ $errorMsg = "";
 $errors = array("name" => "", "username" => "", "email" => "", "password" => "", "cPassword" => "", "signup" => '');
 
 if(isset($_POST['register'])) {
-
-    //name validation
-    $name = $_POST['name'];
-    if (empty($name)) {
-
+    if (empty($_POST['name'])) {
          $errors['name'] = "required  <br/>";
-
-    } else if(strlen($name) < 8) {
-
-        //ensure name contains at least 8 characters
-        $errors['name'] = "Name must contain at least 8 characters  <br/>";
-
-    } else if (!preg_match("/^[a-zA-Z\s]+$/", $name)) {
+    } else {
+        $name = $_POST['name'];
+        if(!preg_match("/^[a-zA-Z\s]+$/", $name)){
             $errors['name'] = "Name can only contain letters and spaces  <br/>";
+        }
     }
 
-    //username validation
-    $username = $_POST['username'];
-    if (empty($username)) {
-
+    if (empty($_POST['username'])) {
         $errors['username'] = "required  <br/>";
-
-    } else if (strlen($username) < 4) {
-
-        $errors['username'] = "Username must contain at least 4 characters <br/>";
-
-    } else if (!preg_match("/^[a-zA-Z0-9]+$/", $username)) {
-            $errors['username'] = "Username can only contain letters and numbers <br/>";
+    } else {
+        $username = $_POST['username'];
+        if(!preg_match("/^[a-zA-Z\s]+$/", $username)){
+            $errors['username'] = "Username can only contain letters and spaces <br/>";
+        }
     }
 
-    //validation for email
     if (empty($_POST['email'])) {
          $errors['email'] = "email is required  <br/>";
     } else {
@@ -45,24 +32,23 @@ if(isset($_POST['register'])) {
             $errors['email'] = "email must be valid address  <br/>";
         }
 
-    }
+}
 
-// password validation
-    $password = htmlspecialchars($_POST['pwd']);
-    $cPassword = htmlspecialchars($_POST['cpwd']);
     if (empty($_POST['pwd'])) {
          $errors['password'] = " <br/> required ";
 
-    } else if ($password != $cPassword) {
-        $errors["cPassword"] = "password does not match  <br/>";
+    } else {
+    $password = htmlspecialchars($_POST['pwd']);
+    $cPassword = htmlspecialchars($_POST['cpwd']);
 
-    } else if(!preg_match("/^[a-zA-Z0-9\w]+$/", $password)){
-            $errors['password'] = "Password can only contain letters digits and special characters ";
-    } else if(strlen($password) < 6) {
-        $errors['password'] = "Password must contain at least 6 characters  <br/>";
+    if($password != $cPassword) {
+        $errors["cPassword"] = "password does not match  <br/>";
     }
 
-if(!array_filter($errors) && $conn) {
+
+}
+
+if(!array_filter($errors) ) {
 
   $name = mysqli_real_escape_string($conn, $_POST["name"]);
   $username = mysqli_real_escape_string($conn, $_POST["username"]);
@@ -94,14 +80,9 @@ $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
             }
 
 
-    } else {
-        if (! $conn) {
-            echo 'Unable to connect to Database';
-        }
-    }
 }
 
-
+}
 
 if(isset($_POST["login"])) {
         $email = $_POST['email'];
