@@ -6,24 +6,37 @@ $errorMsg = "";
 $errors = array("name" => "", "username" => "", "email" => "", "password" => "", "cPassword" => "", "signup" => '');
 
 if(isset($_POST['register'])) {
-    if (empty($_POST['name'])) {
+
+    //name validation
+    $name = $_POST['name'];
+    if (empty($name)) {
+
          $errors['name'] = "required  <br/>";
-    } else {
-        $name = $_POST['name'];
-        if(!preg_match("/^[a-zA-Z\s]+$/", $name)){
+
+    } else if(strlen($name) < 8) {
+
+        //ensure name contains at least 8 characters
+        $errors['name'] = "Name must contain at least 8 characters  <br/>";
+
+    } else if (!preg_match("/^[a-zA-Z\s]+$/", $name)) {
             $errors['name'] = "Name can only contain letters and spaces  <br/>";
-        }
     }
 
-    if (empty($_POST['username'])) {
-        $errors['username'] = "required  <br/>";
-    } else {
-        $username = $_POST['username'];
-        if(!preg_match("/^[a-zA-Z\s]+$/", $username)){
-            $errors['username'] = "Username can only contain letters and spaces <br/>";
-        }
-    } 
+    //username validation
+    $username = $_POST['username'];
+    if (empty($username)) {
 
+        $errors['username'] = "required  <br/>";
+
+    } else if (strlen($username) < 4) {
+
+        $errors['username'] = "Username must contain at least 4 characters <br/>";
+
+    } else if (!preg_match("/^[a-zA-Z0-9]+$/", $username)) {
+            $errors['username'] = "Username can only contain letters and numbers <br/>";
+    }
+
+    //validation for email
     if (empty($_POST['email'])) {
          $errors['email'] = "email is required  <br/>";
     } else {
@@ -31,21 +44,23 @@ if(isset($_POST['register'])) {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = "email must be valid address  <br/>";
         }
-       
-}
 
-    if (empty($_POST['pwd'])) {
-         $errors['password'] = " <br/> required ";
-         
-    } else {
-    $password = htmlspecialchars($_POST['pwd']);
-    $cPassword = htmlspecialchars($_POST['cpwd']);
-
-    if($password != $cPassword) {
-        $errors["cPassword"] = "password does not match  <br/>";
     }
 
-        
+// password validation
+    $password = htmlspecialchars($_POST['pwd']);
+    $cPassword = htmlspecialchars($_POST['cpwd']);
+    if (empty($_POST['pwd'])) {
+         $errors['password'] = " <br/> required ";
+
+    } else if ($password != $cPassword) {
+        $errors["cPassword"] = "password does not match  <br/>";
+
+    } else if(!preg_match("/^[a-zA-Z0-9\w]+$/", $password)){
+            $errors['password'] = "Password can only contain letters digits and special characters ";
+    } else if(strlen($password) < 6) {
+        $errors['password'] = "Password must contain at least 6 characters  <br/>";
+    }
 }
 
 if(!array_filter($errors) ) {
@@ -55,16 +70,16 @@ if(!array_filter($errors) ) {
   $email = mysqli_real_escape_string($conn, $_POST["email"]);
  $password = mysqli_real_escape_string($conn, $_POST["pwd"]);
 
-   
+
    //check if account exist
  $query = "SELECT * FROM users WHERE email = '$email'";
 $query_result = mysqli_query($conn, $query);
 $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
-    
+
 
             if(!$user) {
 
-            	
+
                 $sql = "INSERT INTO users(username, password_hash, email) VALUES('$username','$password', '$email')";
                 $add_user = mysqli_query($conn, $sql);
                 session_start();
@@ -72,17 +87,17 @@ $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
                 $_SESSION['email'] = $email;
                 header("Location: userpage.php?=$username");
 
-                
+
             } else{
                 $errors['signup'] = "This email address already exists. Switch tab to log in";
 
 
-            } 
+            }
 
 
 }
 
-}
+
 
 if(isset($_POST["login"])) {
         $email = $_POST['email'];
