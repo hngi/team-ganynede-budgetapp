@@ -61,7 +61,6 @@ if(isset($_POST['register'])) {
     } else if(strlen($password) < 6) {
         $errors['password'] = "Password must contain at least 6 characters  <br/>";
     }
-}
 
 if(!array_filter($errors) ) {
 
@@ -95,6 +94,7 @@ $user = mysqli_fetch_all($query_result, MYSQLI_ASSOC);
             }
 
 
+    }
 }
 
 
